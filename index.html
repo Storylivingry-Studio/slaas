@@ -12,8 +12,17 @@
         .cosmos{position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse 120% 80% at 30% 20%,rgba(60,40,120,0.1),transparent),radial-gradient(ellipse 80% 120% at 70% 80%,rgba(30,80,100,0.08),transparent),radial-gradient(circle at 50% 50%,var(--cosmos),var(--deep))}
         .stars{position:fixed;inset:0;z-index:0;background-image:radial-gradient(1px 1px at 10% 20%,rgba(255,255,255,0.4),transparent),radial-gradient(1px 1px at 30% 70%,rgba(255,255,255,0.3),transparent),radial-gradient(1px 1px at 50% 10%,rgba(255,255,255,0.5),transparent),radial-gradient(1px 1px at 70% 40%,rgba(255,255,255,0.2),transparent),radial-gradient(1px 1px at 90% 80%,rgba(255,255,255,0.4),transparent),radial-gradient(1.5px 1.5px at 40% 55%,rgba(200,210,255,0.5),transparent),radial-gradient(1px 1px at 85% 15%,rgba(255,255,255,0.35),transparent);animation:starDrift 120s linear infinite}
         @keyframes starDrift{from{transform:translateY(0)}to{transform:translateY(-20px)}}
-        .header{position:fixed;top:0;left:0;right:0;z-index:10;text-align:center;padding:16px;font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);background:linear-gradient(180deg,rgba(5,8,16,0.94) 0%,rgba(5,8,16,0.5) 70%,transparent 100%)}
-        .header span{color:var(--gold)}
+        .header{position:fixed;top:0;left:0;right:0;z-index:10;text-align:center;padding:14px 16px 6px;font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-dim);background:linear-gradient(180deg,rgba(5,8,16,0.94) 0%,rgba(5,8,16,0.5) 70%,transparent 100%)}
+        .header a{color:var(--text-dim);text-decoration:none}.header span{color:var(--gold)}
+        .synav{position:fixed;top:34px;left:0;right:0;z-index:10;display:flex;justify-content:center;align-items:center;gap:6px;padding:6px 16px;background:linear-gradient(180deg,rgba(5,8,16,0.88) 0%,rgba(5,8,16,0.4) 80%,transparent 100%)}
+        .synav-label{font-family:'JetBrains Mono',monospace;font-size:0.75rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-right:10px}
+        .synav-pill{font-family:'JetBrains Mono',monospace;font-size:0.55rem;letter-spacing:0.06em;padding:4px 12px;border-radius:14px;text-decoration:none;border:1px solid rgba(120,140,200,0.12);color:var(--text-dim);transition:all 0.2s;display:flex;align-items:center;gap:4px}.synav-pill:hover{background:rgba(255,255,255,0.04);border-color:rgba(120,140,200,0.25)}.synav-pill .sa-i{font-size:0.7rem}
+        .synav-pill.active{border-color:rgba(34,197,94,0.5);color:#22c55e;background:rgba(34,197,94,0.08)}
+        .synav-pill.sc{border-color:rgba(78,205,196,0.3)}.synav-pill.sc:hover{color:var(--cyan);border-color:var(--cyan)}
+        .synav-pill.sg{border-color:rgba(201,168,76,0.3)}.synav-pill.sg:hover{color:var(--gold);border-color:var(--gold)}
+        .synav-pill.sp{border-color:rgba(167,139,250,0.3)}.synav-pill.sp:hover{color:#a78bfa;border-color:#a78bfa}
+        .synav-pill.so{border-color:rgba(249,115,22,0.3)}.synav-pill.so:hover{color:#f97316;border-color:#f97316}
+        .synav-pill.sn{border-color:rgba(34,197,94,0.3)}.synav-pill.sn:hover{color:#22c55e;border-color:#22c55e}
         .center{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px}
         .title{font-size:2.6rem;font-weight:700;letter-spacing:0.02em;animation:titleGlow 4s ease-in-out infinite}
         @keyframes titleGlow{0%,100%{text-shadow:0 0 20px var(--gold-glow),0 0 60px rgba(201,168,76,0.15)}50%{text-shadow:0 0 40px var(--gold-glow),0 0 100px rgba(201,168,76,0.25)}}
@@ -27,7 +36,8 @@
 <body>
     <div class="cosmos"></div>
     <div class="stars"></div>
-    <div class="header"><span>Fractal Impact</span> · Storylivingry Studio</div>
+    <div class="header"><a href="/"><span>Fractal Impact</span> · Storylivingry Studio</a></div>
+    <nav class="synav"><span class="synav-label">SynApps</span><a class="synav-pill sc" href="/network/?mode=dashboard"><span class="sa-i">▦</span> Dashboard</a><a class="synav-pill sg" href="/network/?mode=fractal"><span class="sa-i">◉</span> Fractal</a><a class="synav-pill sp" href="/network/?mode=feed"><span class="sa-i">≡</span> Feed</a><a class="synav-pill so" href="/syntony-times/"><span class="sa-i">ST</span> Syntony</a><a class="synav-pill sn active" href="/slaas/"><span class="sa-i">↑</span> SLAAS</a></nav>
     <div class="center">
         <div class="title">Storyliving As A Service</div>
         <div class="subtitle">Enter the Graph</div>
